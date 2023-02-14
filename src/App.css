@@ -1,5 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "../node_modules/react-image-gallery/styles/css/image-gallery.css";
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-image: radial-gradient(#cecece 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+section {
+  padding: 2rem 4rem;
+  max-width: 1440px;
+  margin: auto;
+  overflow: hidden;
+
+}
+
+section>h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+section>p {
+  text-align: center;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.custom-shadow {
+  -webkit-box-shadow: 3px 3px 14px 16.5px #dddddd;
+  -moz-box-shadow: 3px 3px 14px 16.5px #dddddd;
+  box-shadow: 3px 3px 14px 16.5px #dddddd;
+}
+
+button:disabled {
+  background-color: #949393;
+  color: #ffffff;
+}
+
+/* ==================MEDIA QURIES (MEDIUM DEVICES)=============== */
+
+@media screen and (max-width:1024px) {
+  section {
+    padding: 2rem 2rem;
+  }
+
+}
+
+/* ==================MEDIA QURIES (SMALL DEVICES)=============== */
+
+@media screen and (max-width:600px) {
+  section {
+    padding: 2rem 1rem;
+  }
+
 }
