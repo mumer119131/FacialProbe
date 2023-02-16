@@ -1,5 +1,6 @@
 import React from 'react'
 import PillPicker from '../../Common/PillPicker/PillPicker';
+import SwipeLeft from '../../Common/FramerAnim/SwipeLeft/SwipeLeft';
 
 const Forehead = (props) => {
     const {
@@ -85,7 +86,7 @@ const Forehead = (props) => {
         { value: "no", label: "No" }
     ];
     return (
-        <div>
+        <SwipeLeft>
             <h2 className='text-3xl font-bold uppercase text-primary text-center'>Forehead</h2>
 
             <div className='flex mt-4 gap-4 flex-wrap justify-center'>
@@ -101,7 +102,7 @@ const Forehead = (props) => {
                 <PillPicker label='Scarring' options={foreheadScarringOptions} value={foreheadScarring} onChange={setForeheadScarring} />
 
             </div>
-        </div>
+        </SwipeLeft>
     )
 }
 

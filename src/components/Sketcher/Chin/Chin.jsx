@@ -1,5 +1,6 @@
 import React from 'react'
 import PillPicker from '../../Common/PillPicker/PillPicker';
+import SwipeLeft from '../../Common/FramerAnim/SwipeLeft/SwipeLeft';
 
 const Chin = (props) => {
     const {
@@ -79,7 +80,7 @@ const Chin = (props) => {
         { value: "average", label: "Average" }
     ];
     return (
-        <div>
+        <SwipeLeft>
             <h2 className='text-3xl font-bold uppercase text-primary text-center'>Chin</h2>
 
             <div className='flex mt-4 gap-4 flex-wrap justify-center'>
@@ -94,7 +95,7 @@ const Chin = (props) => {
                 <PillPicker label='Scarring' options={chinScarringOptions} value={chinScarring} onChange={setChinScarring} />
                 <PillPicker label='Skin Texture' options={chinSkinTextureOptions} value={chinSkinTexture} onChange={setChinSkinTexture} />
             </div>
-        </div>
+        </SwipeLeft>
     )
 }
 

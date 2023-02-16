@@ -4,7 +4,7 @@ import LOGO from '../../assets/fb_logo.png'
 import { MdArrowForwardIos } from 'react-icons/md'
 const Home = () => {
     return (
-        <section>
+        <section data-aos="fade-right">
             <div className='flex items-center flex-wrap'>
                 <div className='basis-auto lg:basis-[50%]'>
                     <div className='flex items-center gap-1 mb-2'>

@@ -8,6 +8,7 @@ import Chin from './Chin/Chin'
 import Forehead from './Forehead/Forehead'
 import Hair from './Hair/Hair'
 import General from './General/General'
+import TopNav from './TopNav/TopNav'
 
 const Sketcher = () => {
     const screens = ['welcome', 'general', 'eyes', 'nose', 'lips', 'cheeks', 'chin', 'forehead', 'hair']
@@ -132,10 +133,14 @@ const Sketcher = () => {
         console.log(prompt)
     }
     return (
-        <section id='sketcher'>
+        <section id='sketcher' data-aos="fade-right">
             <h2 className='text-primary'>Sketcher</h2>
             <p>"Create Accurate Suspect Sketches with FaceSketch: The AI-driven Tool for Law Enforcement"</p>
-            <div className='rounded mt-4 bg-white glassmorphism custom-shadow px-5 py-20'>
+            <div className='rounded mt-4 bg-white glassmorphism custom-shadow px-5 py-20 overflow-hidden'>
+
+                {
+                    screens.indexOf(selectedScreen) !== 0 && <TopNav screens={screens} selectedScreen={selectedScreen} setSelectedScreen={setSelectedScreen} />
+                }
                 {
                     selectedScreen === 'welcome' && <Welcome screens={screens} selectedScreen={selectedScreen} setSelectedScreen={setSelectedScreen} />
                 }
@@ -230,7 +235,7 @@ const Sketcher = () => {
                 {
                     screens.indexOf(selectedScreen) !== 0 && <div className='mt-4 flex justify-between p-8'>
                         <button className='bg-darkGray text-white px-8 py-2 rounded' onClick={handleBack} disabled={screens.indexOf(selectedScreen) === 1 ? true : false}>&lt; BACK</button>
-                        <button className='bg-primary text-white px-8 py-2 rounded' onClick={handleNext}>{screens.indexOf(selectedScreen) === screens.length - 1 ? "SUBMIT" : "NEXT "} &gt;</button>
+                        <button className='bg-primary text-white px-8 py-2 rounded' onClick={handleNext}>{screens.indexOf(selectedScreen) === screens.length - 1 ? "START" : "NEXT "} &gt;</button>
                     </div>
                 }
             </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import PillPicker from '../../Common/PillPicker/PillPicker';
+import SwipeLeft from '../../Common/FramerAnim/SwipeLeft/SwipeLeft';
 
 const General = (props) => {
     const { gender, setGender, age, setAge, skinColor, setSkinColor, skinTexture, setSkinTexture } = props
@@ -31,7 +32,7 @@ const General = (props) => {
     ];
 
     return (
-        <div>
+        <SwipeLeft>
             <h2 className='text-3xl font-bold uppercase text-primary text-center'>General</h2>
 
             <div className='flex mt-4 gap-4 flex-wrap justify-center'>
@@ -40,7 +41,7 @@ const General = (props) => {
                 <PillPicker label='Skin Color' options={skinColorOptions} value={skinColor} onChange={setSkinColor} />
                 <PillPicker label='Skin Texture' options={skinTextureOptions} value={skinTexture} onChange={setSkinTexture} />
             </div>
-        </div>
+        </SwipeLeft>
     )
 }
 

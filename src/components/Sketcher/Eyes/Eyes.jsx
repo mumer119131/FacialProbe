@@ -1,6 +1,7 @@
 import React from 'react'
 import Dropdown from '../../Common/Dropdown/Dropdown'
 import PillPicker from '../../Common/PillPicker/PillPicker';
+import SwipeLeft from '../../Common/FramerAnim/SwipeLeft/SwipeLeft';
 
 const Eyes = (props) => {
     const { eyeShape,
@@ -120,7 +121,7 @@ const Eyes = (props) => {
         { value: "very close", label: "Very Close" }
     ];
     return (
-        <div>
+        <SwipeLeft>
             <h2 className='text-3xl font-bold uppercase text-primary text-center'>Eyes</h2>
 
             <div className='flex mt-4 gap-6 flex-wrap justify-center'>
@@ -136,7 +137,7 @@ const Eyes = (props) => {
                 <PillPicker options={eyeDistanceList} onChange={setDistanceBetweenEyes} value={distanceBetweenEyes} label='Select the Distance between Eyes' />
 
             </div>
-        </div>
+        </SwipeLeft>
     )
 }
 

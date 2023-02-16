@@ -1,5 +1,6 @@
 import React from 'react'
 import PillPicker from '../../Common/PillPicker/PillPicker';
+import SwipeLeft from '../../Common/FramerAnim/SwipeLeft/SwipeLeft';
 
 const Hair = (props) => {
     const {
@@ -95,7 +96,7 @@ const Hair = (props) => {
     ];
 
     return (
-        <div>
+        <SwipeLeft>
             <h2 className='text-3xl font-bold uppercase text-primary text-center'>Hairs</h2>
 
             <div className='flex mt-4 gap-4 flex-wrap justify-center'>
@@ -111,7 +112,7 @@ const Hair = (props) => {
                 <PillPicker label='Scalp Markings' options={scalpMarkingsOptions} value={scalpMarkings} onChange={setScalpMarkings} />
 
             </div>
-        </div>
+        </SwipeLeft>
     )
 }
 

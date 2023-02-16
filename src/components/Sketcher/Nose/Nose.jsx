@@ -1,6 +1,7 @@
 import React from 'react'
 import Dropdown from '../../Common/Dropdown/Dropdown';
 import PillPicker from '../../Common/PillPicker/PillPicker';
+import SwipeLeft from '../../Common/FramerAnim/SwipeLeft/SwipeLeft';
 
 const Nose = (props) => {
     const { noseShape,
@@ -87,7 +88,7 @@ const Nose = (props) => {
         { value: "septal-perforation", label: "Septal Perforation" }
     ];
     return (
-        <div>
+        <SwipeLeft>
             <h2 className='text-3xl font-bold uppercase text-primary text-center'>Nose</h2>
 
             <div className='flex mt-4 gap-4 flex-wrap justify-center'>
@@ -102,7 +103,7 @@ const Nose = (props) => {
                 <PillPicker label='Nasal Septum Deviation' options={noseNasalSeptumDeviations} onChange={setNoseNasalSeptumDeviation} value={noseNasalSeptumDeviation} />
 
             </div>
-        </div>
+        </SwipeLeft>
     )
 }
 

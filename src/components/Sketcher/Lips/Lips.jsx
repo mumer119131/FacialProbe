@@ -1,6 +1,7 @@
 import React from 'react'
 import Dropdown from '../../Common/Dropdown/Dropdown';
 import PillPicker from '../../Common/PillPicker/PillPicker';
+import SwipeLeft from '../../Common/FramerAnim/SwipeLeft/SwipeLeft';
 
 const Lips = (props) => {
 
@@ -102,7 +103,7 @@ const Lips = (props) => {
         { value: "puckered", label: "Puckered" }
     ]
     return (
-        <div>
+        <SwipeLeft>
             <h2 className='text-3xl font-bold uppercase text-primary text-center'>Lips</h2>
 
             <div className='flex mt-4 gap-4 flex-wrap justify-center'>
@@ -118,7 +119,7 @@ const Lips = (props) => {
                 <PillPicker label='Lip Size' options={lipSizesOptions} value={lipSize} onChange={setLipSize} />
                 <PillPicker label='Lip Pucker' options={lipPuckersOptions} value={lipPucker} onChange={setLipPucker} />
             </div>
-        </div>
+        </SwipeLeft>
     )
 }
 

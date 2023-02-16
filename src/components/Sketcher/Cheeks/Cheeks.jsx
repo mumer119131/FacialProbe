@@ -1,6 +1,7 @@
 import React from 'react'
 import Dropdown from '../../Common/Dropdown/Dropdown';
 import PillPicker from '../../Common/PillPicker/PillPicker';
+import SwipeLeft from '../../Common/FramerAnim/SwipeLeft/SwipeLeft';
 
 const Cheeks = (props) => {
     // get all props passed from the parent component
@@ -72,7 +73,7 @@ const Cheeks = (props) => {
         { value: "no", label: "No" }
     ];
     return (
-        <div>
+        <SwipeLeft>
             <h2 className='text-3xl font-bold uppercase text-primary text-center'>Cheeks</h2>
 
             <div className='flex mt-4 gap-4 flex-wrap justify-center'>
@@ -88,7 +89,7 @@ const Cheeks = (props) => {
                 <PillPicker label='Cheek Scarring' options={cheekScarringOptions} value={cheekScarring} onChange={setCheekScarring} />
 
             </div>
-        </div>
+        </SwipeLeft>
     )
 }
 
