@@ -56,6 +56,17 @@ button:disabled {
   color: #ffffff;
 }
 
+.glassmorphism{
+  background: rgba(255,255,255,0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.img__shadow{
+  -webkit-filter: drop-shadow(0px 0px 50px rgba(255, 42, 10, 1.25));
+  filter: drop-shadow(0px 0px 50px rgba(255, 42, 10, 1.25));
+}
 /* ==================MEDIA QURIES (MEDIUM DEVICES)=============== */
 
 @media screen and (max-width:1024px) {

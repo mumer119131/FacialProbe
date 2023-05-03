@@ -9,6 +9,7 @@ import Forehead from './Forehead/Forehead'
 import Hair from './Hair/Hair'
 import General from './General/General'
 import TopNav from './TopNav/TopNav'
+import Detective from '../../assets/detective.png'
 
 const Sketcher = () => {
     const screens = ['welcome', 'general', 'eyes', 'nose', 'lips', 'cheeks', 'chin', 'forehead', 'hair']
@@ -133,22 +134,24 @@ const Sketcher = () => {
         console.log(prompt)
     }
     return (
-        <section id='sketcher' data-aos="fade-right">
+        <section className='h-screen flex items-center justify-center flex-col w-full' id='sketcher' data-aos="fade-right">
             <h2 className='text-primary'>Sketcher</h2>
             <p>"Create Accurate Suspect Sketches with FaceSketch: The AI-driven Tool for Law Enforcement"</p>
-            <div className='rounded mt-4 bg-white glassmorphism custom-shadow px-5 py-20 overflow-hidden'>
+            <div className='w-full flex items-center justify-center rounded mt-4 bg-white glassmorphism custom-shadow px-5 py-20 overflow-hidden'>
 
-                {
-                    screens.indexOf(selectedScreen) !== 0 && <TopNav screens={screens} selectedScreen={selectedScreen} setSelectedScreen={setSelectedScreen} />
-                }
-                {
-                    selectedScreen === 'welcome' && <Welcome screens={screens} selectedScreen={selectedScreen} setSelectedScreen={setSelectedScreen} />
-                }
-                {
-                    selectedScreen === 'general' && <General gender={gender} setGender={setGender} age={age} setAge={setAge} skinColor={skinColor} setSkinColor={setSkinColor} skinTexture={skinTexture} setSkinTexture={setSkinTexture} />
-                }
-                {
-                    selectedScreen === 'eyes' && <Eyes
+                <div className='w-full '>
+
+                    {
+                        screens.indexOf(selectedScreen) !== 0 && <TopNav screens={screens} selectedScreen={selectedScreen} setSelectedScreen={setSelectedScreen} />
+                    }
+                    {
+                        selectedScreen === 'welcome' && <Welcome screens={screens} selectedScreen={selectedScreen} setSelectedScreen={setSelectedScreen} />
+                    }
+                    {
+                        selectedScreen === 'general' && <General gender={gender} setGender={setGender} age={age} setAge={setAge} skinColor={skinColor} setSkinColor={setSkinColor} skinTexture={skinTexture} setSkinTexture={setSkinTexture} />
+                    }
+                    {
+                        selectedScreen === 'eyes' && <Eyes
                         eyeShape={eyeShape}
                         setEyeShape={setEyeShape}
                         eyeBrowShape={eyeBrowShape}
@@ -160,19 +163,19 @@ const Sketcher = () => {
                         irisPattern={irisPattern}
                         setIrisPattern={setIrisPattern}
                         eyeSize={eyeSize}
-                        setEyeSize={setEyeSize}
-                        eyelashes={eyelashes}
-                        setEyelashes={setEyelashes}
-                        eyeSocketShape={eyeSocketShape}
-                        setEyeSocketShape={setEyeSocketShape}
-                        eyeLidWrinkles={eyeLidWrinkles}
-                        setEyeLidWrinkles={setEyeLidWrinkles}
-                        distanceBetweenEyes={distanceBetweenEyes}
-                        setDistanceBetweenEyes={setDistanceBetweenEyes}
-                    />
-                }
-                {
-                    selectedScreen === 'nose' && <Nose
+                            setEyeSize={setEyeSize}
+                            eyelashes={eyelashes}
+                            setEyelashes={setEyelashes}
+                            eyeSocketShape={eyeSocketShape}
+                            setEyeSocketShape={setEyeSocketShape}
+                            eyeLidWrinkles={eyeLidWrinkles}
+                            setEyeLidWrinkles={setEyeLidWrinkles}
+                            distanceBetweenEyes={distanceBetweenEyes}
+                            setDistanceBetweenEyes={setDistanceBetweenEyes}
+                            />
+                        }
+                    {
+                        selectedScreen === 'nose' && <Nose
                         noseShape={noseShape}
                         setNoseShape={setNoseShape}
                         noseBridge={noseBridge}
@@ -191,21 +194,21 @@ const Sketcher = () => {
                         setNoseRidge={setNoseRidge}
                         noseNasalSeptumDeviation={noseNasalSeptumDeviation}
                         setNoseNasalSeptumDeviation={setNoseNasalSeptumDeviation}
-                    />
-                }
-                {
-                    selectedScreen === 'lips' && <Lips lipShape={lipShape} setLipShape={setLipShape} lipColor={lipColor} setLipColor={setLipColor} cupidBow={cupidBow} setCupidBow={setCupidBow} lipThickness={lipThickness} setLipThickness={setLipThickness} lipTexture={lipTexture} setLipTexture={setLipTexture} lipWrinkles={lipWrinkles} setLipWrinkles={setLipWrinkles} lipVolume={lipVolume} setLipVolume={setLipVolume} lipPosition={lipPosition} setLipPosition={setLipPosition} lipScarring={lipScarring} setLipScarring={setLipScarring} lipSize={lipSize} setLipSize={setLipSize} lipPucker={lipPucker} setLipPucker={setLipPucker} lipSmile={lipSmile} setLipSmile={setLipSmile} />
-                }
-                {
-                    selectedScreen === 'cheeks' && <Cheeks cheekShape={cheekShape} setCheekShape={setCheekShape} cheekFullness={cheekFullness} setCheekFullness={setCheekFullness} cheekboneShape={cheekboneShape} setCheekboneShape={setCheekboneShape} smileLines={smileLines} setSmileLines={setSmileLines} cheekBlush={cheekBlush} setCheekBlush={setCheekBlush} sunkenCheeks={sunkenCheeks} setSunkenCheeks={setSunkenCheeks} dimples={dimples} setDimples={setDimples} facialHair={facialHair} setFacialHair={setFacialHair} cheekMoles={cheekMoles} setCheekMoles={setCheekMoles} cheekScarring={cheekScarring} setCheekScarring={setCheekScarring} />
-
-                }
-                {
-                    selectedScreen === 'chin' && <Chin chinShape={chinShape} setChinShape={setChinShape} chinPointiness={chinPointiness} setChinPointiness={setChinPointiness} chinSize={chinSize} setChinSize={setChinSize} chinDimples={chinDimples} setChinDimples={setChinDimples} chinCleft={chinCleft} setChinCleft={setChinCleft} chinBoneProminence={chinBoneProminence} setChinBoneProminence={setChinBoneProminence} chinFacialHair={chinFacialHair} setChinFacialHair={setChinFacialHair} chinMoles={chinMoles} setChinMoles={setChinMoles} chinScarring={chinScarring} setChinScarring={setChinScarring} chinSkinTexture={chinSkinTexture} setChinSkinTexture={setChinSkinTexture} />
-
-                }
-                {
-                    selectedScreen === 'forehead' && <Forehead
+                        />
+                    }
+                    {
+                        selectedScreen === 'lips' && <Lips lipShape={lipShape} setLipShape={setLipShape} lipColor={lipColor} setLipColor={setLipColor} cupidBow={cupidBow} setCupidBow={setCupidBow} lipThickness={lipThickness} setLipThickness={setLipThickness} lipTexture={lipTexture} setLipTexture={setLipTexture} lipWrinkles={lipWrinkles} setLipWrinkles={setLipWrinkles} lipVolume={lipVolume} setLipVolume={setLipVolume} lipPosition={lipPosition} setLipPosition={setLipPosition} lipScarring={lipScarring} setLipScarring={setLipScarring} lipSize={lipSize} setLipSize={setLipSize} lipPucker={lipPucker} setLipPucker={setLipPucker} lipSmile={lipSmile} setLipSmile={setLipSmile} />
+                    }
+                    {
+                        selectedScreen === 'cheeks' && <Cheeks cheekShape={cheekShape} setCheekShape={setCheekShape} cheekFullness={cheekFullness} setCheekFullness={setCheekFullness} cheekboneShape={cheekboneShape} setCheekboneShape={setCheekboneShape} smileLines={smileLines} setSmileLines={setSmileLines} cheekBlush={cheekBlush} setCheekBlush={setCheekBlush} sunkenCheeks={sunkenCheeks} setSunkenCheeks={setSunkenCheeks} dimples={dimples} setDimples={setDimples} facialHair={facialHair} setFacialHair={setFacialHair} cheekMoles={cheekMoles} setCheekMoles={setCheekMoles} cheekScarring={cheekScarring} setCheekScarring={setCheekScarring} />
+                        
+                    }
+                    {
+                        selectedScreen === 'chin' && <Chin chinShape={chinShape} setChinShape={setChinShape} chinPointiness={chinPointiness} setChinPointiness={setChinPointiness} chinSize={chinSize} setChinSize={setChinSize} chinDimples={chinDimples} setChinDimples={setChinDimples} chinCleft={chinCleft} setChinCleft={setChinCleft} chinBoneProminence={chinBoneProminence} setChinBoneProminence={setChinBoneProminence} chinFacialHair={chinFacialHair} setChinFacialHair={setChinFacialHair} chinMoles={chinMoles} setChinMoles={setChinMoles} chinScarring={chinScarring} setChinScarring={setChinScarring} chinSkinTexture={chinSkinTexture} setChinSkinTexture={setChinSkinTexture} />
+                        
+                    }
+                    {
+                        selectedScreen === 'forehead' && <Forehead
                         foreheadShape={foreheadShape}
                         setForeheadShape={setForeheadShape}
                         foreheadHeight={foreheadHeight}
@@ -226,16 +229,22 @@ const Sketcher = () => {
                         setForeheadMoles={setForeheadMoles}
                         foreheadScarring={foreheadScarring}
                         setForeheadScarring={setForeheadScarring}
-                    />
-                }
+                        />
+                    }
 
+                    {
+                        selectedScreen === 'hair' && <Hair hairColor={hairColor} setHairColor={setHairColor} hairTexture={hairTexture} setHairTexture={setHairTexture} hairLength={hairLength} setHairLength={setHairLength} hairThickness={hairThickness} setHairThickness={setHairThickness} hairDensity={hairDensity} setHairDensity={setHairDensity} hairPart={hairPart} setHairPart={setHairPart} hairStyle={hairStyle} setHairStyle={setHairStyle} hairHighlights={hairHighlights} setHairHighlights={setHairHighlights} baldness={baldness} setBaldness={setBaldness} scalpMarkings={scalpMarkings} setScalpMarkings={setScalpMarkings} />
+                    }
+                    {
+                        screens.indexOf(selectedScreen) !== 0 && <div className='mt-4 flex justify-between p-8'>
+                            <button className='bg-darkGray text-white px-8 py-2 rounded' onClick={handleBack} disabled={screens.indexOf(selectedScreen) === 1 ? true : false}>&lt; BACK</button>
+                            <button className='bg-primary text-white px-8 py-2 rounded' onClick={handleNext}>{screens.indexOf(selectedScreen) === screens.length - 1 ? "START" : "NEXT "} &gt;</button>
+                        </div>
+                    }
+                </div>
                 {
-                    selectedScreen === 'hair' && <Hair hairColor={hairColor} setHairColor={setHairColor} hairTexture={hairTexture} setHairTexture={setHairTexture} hairLength={hairLength} setHairLength={setHairLength} hairThickness={hairThickness} setHairThickness={setHairThickness} hairDensity={hairDensity} setHairDensity={setHairDensity} hairPart={hairPart} setHairPart={setHairPart} hairStyle={hairStyle} setHairStyle={setHairStyle} hairHighlights={hairHighlights} setHairHighlights={setHairHighlights} baldness={baldness} setBaldness={setBaldness} scalpMarkings={scalpMarkings} setScalpMarkings={setScalpMarkings} />
-                }
-                {
-                    screens.indexOf(selectedScreen) !== 0 && <div className='mt-4 flex justify-between p-8'>
-                        <button className='bg-darkGray text-white px-8 py-2 rounded' onClick={handleBack} disabled={screens.indexOf(selectedScreen) === 1 ? true : false}>&lt; BACK</button>
-                        <button className='bg-primary text-white px-8 py-2 rounded' onClick={handleNext}>{screens.indexOf(selectedScreen) === screens.length - 1 ? "START" : "NEXT "} &gt;</button>
+                    selectedScreen == 'welcome' && <div>
+                        <img src={Detective} alt='detective' className='img__shadow' />
                     </div>
                 }
             </div>

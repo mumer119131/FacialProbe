@@ -1,8 +1,23 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import LOGO from '../../assets/fb_logo.png'
 const Navbar = () => {
+
+    const [scrollNav, setScrollNav] = useState(false);
+
+    const changeNav = () => {
+        if (window.scrollY >= 80) {
+            setScrollNav(true);
+        } else {
+            setScrollNav(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeNav);
+    }, []);
+
     return (
-        <nav className='flex p-6 items-center justify-center gap-6 ' id='home'>
+        <nav className={`flex fixed w-full z-10 p-6 items-center justify-center gap-6 ${scrollNav ? 'glassmorphism' : ''}`} id='home'>
             <ul className='gap-4 hidden md:flex md:gap-1'>
                 <li className='hover:bg-primary hover:text-white py-2 px-4 rounded-full transition ease-in-out'>
                     <a href="#home">Home</a>
