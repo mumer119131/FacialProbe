@@ -13,8 +13,8 @@ const Home = () => {
                     </div>
                     <p>FaceSketch AI is a cutting-edge website that uses advanced machine learning algorithms to generate sketches of suspected individuals based on inputted facial characteristics.</p>
                     <div className='mt-10 flex flex-wrap gap-2'>
-                        <a href="#sketcher"><button className='flex items-center gap-1 bg-primary px-4 py-2 uppercase h-full rounded text-white hover:tracking-wider hover:bg-lightPrimary transition-all'>Get Started  &gt;</button></a>
-                        <a href="#about"><button className='border-primary border-2 px-4 py-2 rounded hover:border-lightPrimary hover:bg-lightPrimary hover:tracking-wider transition-all'>Learn more</button></a>
+                        <a href="#sketcher"><button className='flex items-center gap-1 bg-primary px-4 py-2 uppercase h-full rounded-full text-white hover:tracking-wider hover:bg-lightPrimary transition-all'>Get Started  &gt;</button></a>
+                        <a href="#about"><button className='border-primary border-2 px-4 py-2 rounded-full hover:border-lightPrimary hover:bg-lightPrimary hover:tracking-wider transition-all'>Learn more</button></a>
                     </div>
                 </div>
                 <div>

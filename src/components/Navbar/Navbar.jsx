@@ -17,7 +17,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className={`flex fixed w-full z-10 p-6 items-center justify-center gap-6 ${scrollNav ? 'glassmorphism' : ''}`} id='home'>
+        <nav className={`flex fixed w-full top-0 z-10 p-6 items-center justify-center gap-6 ${scrollNav ? 'glassmorphism' : ''}`} id='home'>
             <ul className='gap-4 hidden md:flex md:gap-1'>
                 <li className='hover:bg-primary hover:text-white py-2 px-4 rounded-full transition ease-in-out'>
                     <a href="#home">Home</a>
