@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Loading = () => {
+const Loading = ({loadingText}) => {
   return (
-    <div class="shapes"></div>
+    <div className='flex flex-col items-center'>
+      <div class="shapes"></div>
+      <h2 className='mt-10'>{loadingText}</h2>
+    </div>
   )
 }
 

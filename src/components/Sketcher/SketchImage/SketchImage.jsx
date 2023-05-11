@@ -9,7 +9,7 @@ const SketchImage = ({image, handleMatchClick}) => {
   
   return (
     <div className='flex flex-col items-center justify-center'>
-      <img src={image} className='w-[25rem] object-cover'/>
+      <img src={image} className='w-[20rem] object-cover'/>
       <div className='flex gap-2 mt-6'>
         <SecondaryButton title='Start again'>Reset</SecondaryButton>
         <PrimaryButton onClick={handleMatchClick} title='Match the image from the previous criminals database images'>Match</PrimaryButton>

@@ -60,7 +60,7 @@ const Team = () => {
         }
     ]
     return (
-        <section id='team' data-aos="fade-left">
+        <section className='min-h-screen flex items-center pt-[90px] justify-center flex-col w-full' id='team' data-aos="fade-left">
             <h2 className='text-primary'>Team</h2>
             <p>"Uniting cutting-edge AI and a passion for justice, our team is solving crimes one sketch at a time."</p>
             <div className='flex flex-wrap gap-8 mt-4 justify-center'>

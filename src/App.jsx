@@ -7,6 +7,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Homepage from './pages/HomePage/Homepage'
 import SketcherPage from './pages/SketcherPage/SketcherPage';
 import Navbar from './components/Navbar/Navbar';
+import Team from './pages/Team/Team';
+import Gallery from './pages/Gallery/Gallery';
+import Technologies from './pages/Technologies/Technologies';
+import About from './pages/About/About';
 
 function App() {
   useEffect(() => {
@@ -20,6 +24,10 @@ function App() {
         <Route path='/' element={<Homepage />} />
         <Route path='*' element={<h1>404</h1>} />
         <Route path='/sketcher' element={<SketcherPage />} />
+        <Route path='/team' element={<Team />} />
+        <Route path='/gallery' element={<Gallery />} />
+        <Route path='/technologies' element={<Technologies />} />
+        <Route path='/about' element={<About/>} />
       </Routes>
     </BrowserRouter>
   )

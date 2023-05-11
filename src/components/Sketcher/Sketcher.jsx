@@ -21,7 +21,7 @@ import Matching from './Matching/Matching'
 const Sketcher = () => {
     const screens = ['welcome', 'general', 'eyes', 'nose', 'lips', 'cheeks', 'chin', 'forehead', 'hair']
 
-    const [selectedScreen, setSelectedScreen] = useState('hair')
+    const [selectedScreen, setSelectedScreen] = useState('welcome')
 
     // General Properties
 
@@ -125,9 +125,15 @@ const Sketcher = () => {
     const [fileName, setFile] = useState('')
     const [imageName, setImageName] = useState('')
     const [matchingImage, setMatchingImage] = useState('')
+    const [matchImageFileName, setMatchImageFileName] = useState('')
+    const [matchImageDetails, setMatchImageDetails] = useState({})
+
     const handleBack = () => {
         if (selectedScreen == 'image') {
             return setSelectedScreen('hair')
+        }
+        if (selectedScreen == 'match') {
+            return setSelectedScreen('image')
         }
         const currentIndex = screens.indexOf(selectedScreen)
         const previousScreen = screens[currentIndex - 1]
@@ -148,11 +154,21 @@ const Sketcher = () => {
         const formData = new FormData()
         formData.append('image_name', imageName)
         const response = await axios.post("http://127.0.0.1:5000/compare", formData, { responseType : 'blob'})
+        console.log(response)
         const imgUrl = URL.createObjectURL(response.data)
+        const fileName = response.headers.get('Content-Disposition').split('filename=')[1]
+        console.log(fileName)
+        getMatchedFaceDetail(fileName)
+        setMatchImageFileName(fileName)
         setMatchingImage(imgUrl)
         setSelectedScreen('match')
         setLoading(false)
 
+      }
+      const getMatchedFaceDetail = async(fileName) => {
+        const response = await axios.get("http://127.0.0.1:5000/get-image-person", { params : { image_name : fileName}})
+        console.log(response)
+        setMatchImageDetails(response.data)
       }
     const generateImage = async() => {
         try{
@@ -183,7 +199,7 @@ const Sketcher = () => {
         <section className='min-h-screen flex items-center pt-[90px] justify-center flex-col w-full' id='sketcher' data-aos="fade-right">
             <h2 className='text-primary'>Sketcher</h2>
             <p>"Create Accurate Suspect Sketches with FaceSketch: The AI-driven Tool for Law Enforcement"</p>
-            <div className='w-full flex items-center justify-center rounded mt-4 bg-white glassmorphism custom-shadow px-5 py-20 overflow-hidden'>
+            <div className='w-full flex items-center justify-center rounded mt-4 bg-white glassmorphism custom-shadow px-5 py-5 min-h-[20rem] overflow-hidden'>
 
                 {
                     !loading ? <div className='w-full h-full'>
@@ -286,15 +302,15 @@ const Sketcher = () => {
                         selectedScreen == 'image' && <SketchImage image={image} handleMatchClick={handleMatchClick} />
                     }
                     {
-                        selectedScreen == 'match' && <Matching matchingImage={matchingImage} image={image}/>
+                        selectedScreen == 'match' && <Matching matchingImage={matchingImage} image={image} matchImageDetails={matchImageDetails}/>
                     }
                     {
                         screens.indexOf(selectedScreen) !== 0 && <div className='mt-4 flex justify-between p-8'>
-                            <SecondaryButton className='bg-darkGray text-white px-8 py-2 rounded' onClick={handleBack} disabled={screens.indexOf(selectedScreen) === 1 ? true : false}>&lt; BACK</SecondaryButton>
-                            <PrimaryButton className='bg-primary text-white px-8 py-2 rounded' onClick={handleNext}>{screens.indexOf(selectedScreen) === screens.length - 1 ? "START" : "NEXT "} &gt;</PrimaryButton>
+                            <SecondaryButton className='bg-darkGray text-white px-8 rounded' onClick={handleBack} disabled={screens.indexOf(selectedScreen) === 1 ? true : false}>&lt; BACK</SecondaryButton>
+                            {screens.indexOf(selectedScreen) != -1 && <PrimaryButton className='bg-primary text-white px-8 rounded' onClick={handleNext}>{screens.indexOf(selectedScreen) === screens.length - 1 ? "START" : "NEXT "} &gt;</PrimaryButton>}
                         </div>
                     }
-                </div> : <Loading />
+                </div> : <Loading loadingText="Loading..."/>
                 }
                 {
                     selectedScreen == 'welcome' && <div>
