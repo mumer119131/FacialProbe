@@ -199,7 +199,7 @@ const Sketcher = () => {
         <section className='min-h-screen flex items-center pt-[90px] justify-center flex-col w-full' id='sketcher' data-aos="fade-right">
             <h2 className='text-primary'>Sketcher</h2>
             <p>"Create Accurate Suspect Sketches with FaceSketch: The AI-driven Tool for Law Enforcement"</p>
-            <div className='w-full flex items-center justify-center rounded mt-4 bg-white glassmorphism custom-shadow px-5 py-5 min-h-[20rem] overflow-hidden'>
+            <div className='w-full flex items-center justify-center rounded mt-4 bg-background custom-shadow px-5 py-5 min-h-[20rem] overflow-hidden'>
 
                 {
                     !loading ? <div className='w-full h-full'>
@@ -311,11 +311,6 @@ const Sketcher = () => {
                         </div>
                     }
                 </div> : <Loading loadingText="Loading..."/>
-                }
-                {
-                    selectedScreen == 'welcome' && <div>
-                        <img src={Detective} alt='detective' className='img__shadow' />
-                    </div>
                 }
             </div>
 
