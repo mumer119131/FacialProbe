@@ -307,7 +307,7 @@ const Sketcher = () => {
                     {
                         screens.indexOf(selectedScreen) !== 0 && <div className='mt-4 flex justify-between p-8'>
                             <SecondaryButton className='bg-darkGray text-white px-8 rounded' onClick={handleBack} disabled={screens.indexOf(selectedScreen) === 1 ? true : false}>&lt; BACK</SecondaryButton>
-                            {screens.indexOf(selectedScreen) != -1 && <PrimaryButton className='bg-primary text-white px-8 rounded' onClick={handleNext}>{screens.indexOf(selectedScreen) === screens.length - 1 ? "START" : "NEXT "} &gt;</PrimaryButton>}
+                            {screens.indexOf(selectedScreen) != -1 && <PrimaryButton className='px-8 rounded' onClick={handleNext}>{screens.indexOf(selectedScreen) === screens.length - 1 ? "START" : "NEXT "} &gt;</PrimaryButton>}
                         </div>
                     }
                 </div> : <Loading loadingText="Loading..."/>

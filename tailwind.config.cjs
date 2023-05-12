@@ -1,8 +1,9 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx}"],
+
   theme: {
     colors: {
-      primary: "#0A2A5E",
+      primary: "#800020",
       lightPrimary: "#3399FF",
       darkGray: "#333F48",
       lightGray: "#D9D9D9",
@@ -17,3 +18,14 @@ module.exports = {
   },
   plugins: [],
 };
+
+// White: #FFFFFF
+// Pale pink: #F5DAD9
+// Lavender: #BDB0FF
+// Light blue: #B5EAEA
+// Neon green: #39FF14
+// Hot pink: #FF69B4
+// Gold: #FFD700
+// Silver: #C0C0C0
+// Terracotta: #E2725B
+// Deep burgundy: #800020
