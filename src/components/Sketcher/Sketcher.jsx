@@ -197,8 +197,8 @@ const Sketcher = () => {
     }
     return (
         <section className='min-h-screen flex items-center pt-[90px] justify-center flex-col w-full' id='sketcher' data-aos="fade-right">
-            <h2 className='text-primary'>Sketcher</h2>
-            <p>"Create Accurate Suspect Sketches with FaceSketch: The AI-driven Tool for Law Enforcement"</p>
+            <h2 className='text-primary select-none'>Sketcher</h2>
+            <p className='select-none'>Create Accurate Suspect Sketches with FaceSketch: The AI-driven Tool for Law Enforcement</p>
             <div className='w-full flex items-center justify-center rounded mt-4 bg-background custom-shadow px-5 py-5 min-h-[20rem] overflow-hidden'>
 
                 {
@@ -306,7 +306,7 @@ const Sketcher = () => {
                     }
                     {
                         screens.indexOf(selectedScreen) !== 0 && <div className='mt-4 flex justify-between p-8'>
-                            <SecondaryButton className='bg-darkGray text-white px-8 rounded' onClick={handleBack} disabled={screens.indexOf(selectedScreen) === 1 ? true : false}>&lt; BACK</SecondaryButton>
+                            <SecondaryButton className='border-none  text-white px-8 rounded' onClick={handleBack} disabled={screens.indexOf(selectedScreen) === 1 ? true : false}>&lt; BACK</SecondaryButton>
                             {screens.indexOf(selectedScreen) != -1 && <PrimaryButton className='px-8 rounded' onClick={handleNext}>{screens.indexOf(selectedScreen) === screens.length - 1 ? "START" : "NEXT "} &gt;</PrimaryButton>}
                         </div>
                     }

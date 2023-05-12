@@ -60,26 +60,26 @@ const Team = () => {
         }
     ]
     return (
-        <section className='min-h-screen flex items-center pt-[90px] justify-center flex-col w-full' id='team' data-aos="fade-left">
+        <section className='min-h-screen flex items-center pt-[90px] justify-center flex-col w-full' id='team'>
             <h2 className='text-primary'>Team</h2>
             <p>"Uniting cutting-edge AI and a passion for justice, our team is solving crimes one sketch at a time."</p>
             <div className='flex flex-wrap gap-8 mt-4 justify-center'>
                 {
                     teamMembers.map((member, index) => {
                         return (
-                            <div className='rounded-lg bg-white custom-shadow' data-aos="fade-up">
+                            <div className='rounded-lg bg-[#111] custom-shadow' data-aos="fade-up">
                                 <img src={BG} width="400" alt="background image" className='rounded-lg' />
                                 <div className='py-2 px-4 relative'>
                                     <img className='circle border-4 border-lightGray h-[8rem] w-[8rem] top-[-4rem] left-[50%] translate-x-[-50%] absolute object-cover' src={member.img} alt="IMG" />
                                     <h2 className='uppercase mt-20 text-sm text-primary'>{member.role}</h2>
-                                    <h2 className='font-bold  text-3xl tracking-wide text-primary'>{member.name}</h2>
+                                    <h2 className='font-bold  text-3xl tracking-wide green__gradient__text'>{member.name}</h2>
                                     <h3 className='text-primary mb-4'>BSCS 8th <span className='text-sm font-light'>( {member.ag} )</span></h3>
                                     <div
                                         className="flex text-4xl justify-center gap-4 mb-4 mt-8"
                                     >
                                         {member.socials.map((social) => {
                                             return (
-                                                <a key={social.id} href={social.link} target="_blank">
+                                                <a key={social.id} className={`hover:text-primary custom__transition`} href={social.link} target="_blank">
                                                     {social.icon}
                                                 </a>
                                             );

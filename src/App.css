@@ -9,7 +9,6 @@ body {
   /* background-image: radial-gradient(#cecece 1px, transparent 1px);
   background-size: 32px 32px;
   background-color: #ffffff; */
-  background-color: black;
   color: white;
 }
 
@@ -23,7 +22,7 @@ section {
   max-width: 1440px;
   margin: auto;
   overflow: hidden;
-
+  margin-bottom: 5rem;
 }
 
 section>h2 {
@@ -85,8 +84,9 @@ section>p {
 }
 
 button:disabled {
-  background-color: #949393;
+  background-color: #2c2c2c;
   color: #ffffff;
+  border : transparent
 }
 
 .glassmorphism{
@@ -104,7 +104,7 @@ button:disabled {
 .shapes {
    width: 44.8px;
    height: 44.8px;
-   color: #474bff;
+   color: #01d17b;
    position: relative;
 }
 
@@ -122,7 +122,7 @@ button:disabled {
 }
 
 .custom__transition {
-  transition: 0.5s linear all;
+  transition: 0.3s linear all;
 }
 
 
