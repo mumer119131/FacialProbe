@@ -2,7 +2,7 @@ import React from 'react'
 import PERSON from '../../assets/person2.png'
 const About = () => {
     return (
-        <section className='min-h-screen flex items-center pt-[90px] justify-center flex-col w-full' id='about'>
+        <section className='min-h-[calc(100vh-88px)] flex items-center pt-[90px] justify-center flex-col w-full' id='about'>
             <h2 className='text-primary'>About</h2>
             <p>"Get to know the people and mission behind FaceSketch."</p>
             <div className='flex flex-wrap mt-4 items-center justify-between'>

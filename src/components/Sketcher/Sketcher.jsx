@@ -196,7 +196,7 @@ const Sketcher = () => {
         
     }
     return (
-        <section className='min-h-screen flex items-center pt-[90px] justify-center flex-col w-full' id='sketcher' data-aos="fade-right">
+        <section className='min-h-[calc(100vh-88px)] flex items-center pt-[90px] justify-center flex-col w-full' id='sketcher' data-aos="fade-right">
             <h2 className='text-primary select-none'>Sketcher</h2>
             <p className='select-none'>Create Accurate Suspect Sketches with FaceSketch: The AI-driven Tool for Law Enforcement</p>
             <div className='w-full flex items-center justify-center rounded mt-4 bg-background custom-shadow px-5 py-5 min-h-[20rem] overflow-hidden'>

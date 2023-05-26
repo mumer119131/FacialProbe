@@ -30,7 +30,7 @@ const Gallery = () => {
         },
     ];
     return (
-        <section className='min-h-screen flex items-center pt-[90px] justify-center flex-col w-full' id='gallery' data-aos='fade-right'>
+        <section className='min-h-[calc(100vh-88px)] flex items-center pt-[90px] justify-center flex-col w-full' id='gallery' data-aos='fade-right'>
             <h2 className='text-primary'>Gallery</h2>
             <p>"Take a look at our previous successes and see the power of FaceSketch in action."</p>
             <ImageGallery items={images} additionalClass='mt-4' />

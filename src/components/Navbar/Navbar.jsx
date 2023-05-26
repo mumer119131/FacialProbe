@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`fixed hidden md:flex font-light max-w-[1440px] left-[50%] translate-x-[-50%] w-full top-0 z-10 p-6 items-center justify-center gap-6 ${scrollNav ? 'glassmorphism' : ''}`} id='home'>
+            <nav className={`hidden md:flex font-light max-w-[1440px] mx-auto w-full top-0 z-10 p-6 items-center justify-center gap-6`} id='home'>
                 <ul className='gap-4 hidden md:flex md:gap-1'>
                     <li className='hover:bg-white hover:text-black py-2 px-4 rounded-full transition ease-in-out tracking-widest'>
                         <Link to="/">Home</Link>
@@ -34,12 +34,12 @@ const Navbar = () => {
                         <Link to="/sketcher">Sketcher</Link>
                     </li>
                     <li className='hover:bg-white hover:text-black py-2 px-4 rounded-full transition ease-in-out tracking-widest'>
-                        <Link to="/team">Team</Link>
+                        <Link to="/matcher">Matcher</Link>
                     </li>
                 </ul>
                 <div className='items-center gap-1 hidden md:flex'>
                     <img src={LOGO} className='white__img' width="40" height="40" />
-                    <h2 className='text-2xl font-bold purple__gradient__text'>Facial Probe</h2>
+                    <h2 className='text-2xl font-bold'>Facial Probe</h2>
                 </div>
                 <ul className='gap-4 hidden md:flex md:gap-1'>
                     <li className='hover:bg-white hover:text-black py-2 px-4 rounded-full transition ease-in-out tracking-widest'>
@@ -49,7 +49,7 @@ const Navbar = () => {
                         <Link to="/technologies">Technology</Link>
                     </li>
                     <li className='hover:bg-white hover:text-black py-2 px-4 rounded-full transition ease-in-out tracking-widest'>
-                        <Link to="/about">About</Link>
+                        <Link to="/team">Team</Link>
                     </li>
                 </ul>
             </nav>

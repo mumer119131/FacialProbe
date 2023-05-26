@@ -9,7 +9,7 @@ const PillPicker = (props) => {
                 {
                     options.map((option, index) => {
                         return (
-                            <small key={index} className={`bg-primary cursor-pointer text-white px-4 py-1 rounded-full ${option.label === value.label ? 'bg-opacity-100' : 'bg-opacity-40'} `} onClick={() => onChange(option)}>{option.label}</small>
+                            <small key={index} className={`bg-primary cursor-pointer select-none text-white px-4 py-1 rounded-full ${option.label === value.label ? 'bg-opacity-100' : 'bg-opacity-40'} `} onClick={() => onChange(option)}>{option.label}</small>
                         )
                     })
                 }

@@ -11,6 +11,7 @@ import Team from './pages/Team/Team';
 import Gallery from './pages/Gallery/Gallery';
 import Technologies from './pages/Technologies/Technologies';
 import About from './pages/About/About';
+import Matcher from './pages/Matcher/Matcher';
 
 function App() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/technologies' element={<Technologies />} />
         <Route path='/about' element={<About/>} />
+        <Route path='/matcher' element={<Matcher/>} />
       </Routes>
     </BrowserRouter>
   )

@@ -3,7 +3,8 @@ import PrimaryButton from '../Common/PrimaryButton/PrimaryButton'
 import SecondaryButton from '../Common/SecondaryButton/SecondaryButton'
 import { animate } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
-
+// import SHAPE from '../../assets/shape.svg'
+import LOGO from '../../assets/fb_logo.png'
 const Home = () => {
     const textItems = [{name : 'sketch', color_one : '#4ba39f', color_two : '#01d17b'},
                         {name : 'justice', color_one : '#da6206', color_two : '#d1cb01'},
@@ -54,9 +55,10 @@ const Home = () => {
         return () => clearInterval(interval);
     }, [])
     return (
-        <section className='min-h-screen flex items-center pt-[90px] justify-center flex-col w-full' data-aos="fade-right">
+        <section className='min-h-[calc(100vh-88px)] flex items-center pt-[90px] justify-center flex-col w-full' data-aos="fade-right">
             <div className='flex items-center flex-wrap mt-12'>
                 <div className='flex items-center flex-col'>
+                    {/* <img src={LOGO} alt="shape" className='w-[100px] object-contain' /> */}
                     <h1 className='text-[4rem] lg:text-[5rem] font-bold text-center select-none'>
                         <span className='custom__transition' style={activeText.name == 'sketch' ? TextGradientGenerator() : defaultGradient}>Sketch</span> 
                         <span className='custom__transition' style={activeText.name == 'justice' ? TextGradientGenerator() : defaultGradient}> Justice</span> 
