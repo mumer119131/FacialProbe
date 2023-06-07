@@ -3,6 +3,7 @@ import {BsCalendar2Date} from 'react-icons/bs'
 import {GoLocation} from 'react-icons/go'
 import {GiCrimeSceneTape} from 'react-icons/gi'
 const Matching = ({matchingImage, image, matchImageDetails}) => {
+  console.log(image)
   return (
     <>
     <div className='flex gap-4 flex-wrap items-center justify-center'>

@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className={`hidden md:flex font-light max-w-[1440px] mx-auto w-full top-0 z-10 p-6 items-center justify-center gap-6`} id='home'>
+            <nav className={`hidden md:flex font-medium max-w-[1440px] mx-auto w-full top-0 z-10 p-6 items-center justify-center gap-6`} id='home'>
                 <ul className='gap-4 hidden md:flex md:gap-1'>
                     <li className='hover:bg-white hover:text-black py-2 px-4 rounded-full transition ease-in-out tracking-widest'>
                         <Link to="/">Home</Link>
