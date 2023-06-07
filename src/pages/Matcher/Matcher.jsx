@@ -3,6 +3,7 @@ import Upload from '../../components/Matcher/Upload/Upload'
 import axios from 'axios'
 import Loading from '../../components/Sketcher/Loading/Loading'
 import Matching from '../../components/Sketcher/Matching/Matching'
+import PrimaryButton from '../../components/Common/PrimaryButton/PrimaryButton'
 
 const Matcher = () => {
   const [matchImage, setMatchImage] = React.useState(null)
@@ -32,6 +33,9 @@ const Matcher = () => {
       try{
         const response = await axios.get(`http://localhost:5000/match-image-details?image_name=${fileName}`)
         setMatchImageDetails(response.data)
+        if (!response.data.country) {
+          setError('Person not found in the database')
+        }
       }catch{
         setError('Person not found in the database')
       }
@@ -45,6 +49,12 @@ const Matcher = () => {
       console.log(err)
     }
   }
+  const resetImage = () => {
+    setMatchImage(null)
+    setSelectedScreen('upload')
+    setMatchingImage(null)
+    setMatchImageDetails(null)
+  }
   return (
     <section className='min-h-[calc(100vh-88px)] flex items-center pt-[90px] justify-center flex-col w-full' id='sketcher' data-aos="fade-right">
         <h2 className='text-primary select-none'>Matcher</h2>
@@ -53,14 +63,17 @@ const Matcher = () => {
         }
         <div className='w-full flex items-center justify-center rounded mt-4 bg-background custom-shadow px-5 py-5 min-h-[20rem] overflow-hidden'>
             {
-              !isLoading ? <div className='w-full h-full'>
+              !isLoading ? <div className='flex flex-col items-center w-full h-full'>
                 {
                   selectedScreen === 'upload' && <Upload error={error} handleImageChange={handleImageChange} />
                 }
                 {
-                  selectedScreen == 'match' && <Matching matchingImage={matchingImage} image={matchImage} matchImageDetails={matchImageDetails}/>
+                  selectedScreen == 'match' && <Matching matchingImage={matchingImage} matchImageText='Original' image={matchImage} matchImageDetails={matchImageDetails}/>
                 }
-                </div> : <Loading />
+                {
+                  selectedScreen == 'match' && <PrimaryButton onClick={resetImage} className='mt-4'>Reset</PrimaryButton>
+                }
+                </div> : <Loading loadingText='Matching face in the database...' />
               
             }
         </div>

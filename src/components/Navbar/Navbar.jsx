@@ -1,16 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import LOGO from '../../assets/fb_logo.png'
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import {AiFillHome} from 'react-icons/ai'
 import {SiSketchup} from 'react-icons/si'
 import {RiTeamFill} from 'react-icons/ri'
 import {GrGallery} from 'react-icons/gr'
 import {GrTechnology} from 'react-icons/gr'
 import {AiFillInfoCircle} from 'react-icons/ai'
+import {RiLogoutBoxFill} from 'react-icons/ri'
+import { useNavigate } from 'react-router-dom'
 const Navbar = () => {
 
     const [scrollNav, setScrollNav] = useState(false);
-
+    const location = useLocation();
+    const navigate = useNavigate()
+    const isNavbar = location.pathname === '/login' ? false : true;
     const changeNav = () => {
         if (window.scrollY >= 80) {
             setScrollNav(true);
@@ -23,7 +27,11 @@ const Navbar = () => {
         window.addEventListener('scroll', changeNav);
     }, []);
 
-    return (
+    const logoutUser = () => {
+        localStorage.removeItem('token')
+        navigate('/login')
+    }
+     return isNavbar ? (
         <>
             <nav className={`hidden md:flex font-medium max-w-[1440px] mx-auto w-full top-0 z-10 p-6 items-center justify-center gap-6`} id='home'>
                 <ul className='gap-4 hidden md:flex md:gap-1'>
@@ -52,6 +60,8 @@ const Navbar = () => {
                         <Link to="/team">Team</Link>
                     </li>
                 </ul>
+
+                <button onClick={logoutUser} className='absolute top-6 right-8 flex gap-2 items-center hover:bg-white hover:text-black px-4 py-2 rounded-full'>Logout <RiLogoutBoxFill /></button>
             </nav>
             <nav className={`flex min-w-[330px] md:hidden fixed left-[50%] translate-x-[-50%] rounded-full w-[90vw] bottom-2 z-10 px-6 py-4 items-center justify-around gap-2 glassmorphism`} id='home'>
                 <ul className='gap-4 flex justify-between w-full md:hidden md:gap-1'>
@@ -76,7 +86,7 @@ const Navbar = () => {
                 </ul>
             </nav>
         </>
-    )
+    ) : null
 }
 
 export default Navbar

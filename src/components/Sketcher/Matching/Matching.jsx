@@ -2,13 +2,13 @@ import React from 'react'
 import {BsCalendar2Date} from 'react-icons/bs'
 import {GoLocation} from 'react-icons/go'
 import {GiCrimeSceneTape} from 'react-icons/gi'
-const Matching = ({matchingImage, image, matchImageDetails}) => {
+const Matching = ({matchingImage, matchImageText, image, matchImageDetails}) => {
   console.log(image)
   return (
     <>
     <div className='flex gap-4 flex-wrap items-center justify-center'>
       <div className='relative rounded-lg overflow-hidden'>
-        <p className='absolute left-2 top-2 bg-darkGray text-white px-4 rounded-full text-sm py-1 hover:shadow-lg shadow-primary'>Sketch</p>
+        <p className='absolute left-2 top-2 bg-darkGray text-white px-4 rounded-full text-sm py-1 hover:shadow-lg shadow-primary'>{matchImageText ? matchImageText : 'Sketch'}</p>
         <img src={image} alt='matching image' className='object-cover w-[20rem] h-[20rem]'/>
       </div>
       <div className='relative rounded-lg overflow-hidden'>
