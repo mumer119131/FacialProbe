@@ -31,8 +31,8 @@ const Login = () => {
     },[])
     return (
     <div className='min-h-[calc(100vh)] flex items-center pt-[90px] justify-center flex-col w-full'>
-        <h2 className='text-white text-4xl font-bold uppercase tracking-[8px]'>Login</h2>
-        <form className='w-[25rem]' onSubmit={handleLogin}>
+        <h2 className='text-white text-4xl font-bold uppercase tracking-[8px] select-none'>Login</h2>
+        <form className='w-[22rem]' onSubmit={handleLogin}>
             <input type="text" placeholder='Username' className='bg-background bg-opacity-75 text-white w-full py-3 px-4 mt-4 outline-none' value={username} onChange={(e)=> setUsername(e.target.value)} />
             <input type="password" placeholder='Password' className='bg-background bg-opacity-75 text-white w-full py-3 px-4 mt-4 outline-none' value={password} onChange={(e)=> setPassword(e.target.value)} />
             <PrimaryButton className='w-full mt-4' type="submit">Login</PrimaryButton>
